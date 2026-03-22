@@ -1,0 +1,32 @@
+# --- Gradle ---
+.gradle/
+build/
+
+# --- Local config ---
+local.properties
+
+# --- Android Studio / IntelliJ ---
+.idea/
+*.iml
+
+# но сохраняем полезные настройки
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+
+# --- Kotlin ---
+.kotlin/
+
+# --- Native build ---
+.externalNativeBuild/
+.cxx/
+
+# --- Captures (Android Studio profiler) ---
+captures/
+
+# --- Logs ---
+*.log
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+/img/
