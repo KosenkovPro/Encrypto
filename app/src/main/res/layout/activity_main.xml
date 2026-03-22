@@ -15,8 +15,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name_ru"
-            android:textSize="30sp"
+            android:text="@string/app_name"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#111111"/>
 
@@ -24,10 +24,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/description"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textColor="#666666"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="12dp"/>
 
         <!-- Текст -->
         <com.google.android.material.textfield.TextInputLayout
@@ -41,7 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:inputType="textMultiLine"
-                android:gravity="top"/>
+                android:gravity="top"
+                android:textColor="?attr/colorOnSurface"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Ключ -->
@@ -57,14 +58,15 @@
                 android:id="@+id/etSecretKey"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:textColor="?attr/colorOnSurface"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Кнопки -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -75,12 +77,21 @@
                 android:layout_weight="1"
                 android:text="@string/encrypt_button"
                 android:textAllCaps="false"
+
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
+                android:ellipsize="none"
+
                 app:cornerRadius="16dp"
                 app:icon="@drawable/ic_encrypt"
-                app:iconGravity="textStart"/>
+                app:iconGravity="textStart"
+                app:iconPadding="6dp"/>
 
             <Space
-                android:layout_width="14dp"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"/>
 
             <com.google.android.material.button.MaterialButton
@@ -91,20 +102,22 @@
                 android:layout_weight="1"
                 android:text="@string/decrypt_button"
                 android:textAllCaps="false"
+
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeStepGranularity="1sp"
+                android:maxLines="2"
+                android:ellipsize="none"
+
                 app:cornerRadius="16dp"
                 app:icon="@drawable/ic_decrypt"
-                app:iconGravity="textStart"/>
+                app:iconGravity="textStart"
+                app:iconPadding="6dp"/>
+
         </LinearLayout>
 
         <!-- Результат -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/result_output"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="28dp"/>
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

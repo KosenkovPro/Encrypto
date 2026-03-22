@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Encrypto</string>
-    <string name="app_name_ru">Энкрипто</string>
+    <string name="app_name">Энкрипто</string>
     <string name="description">Симметричное шифрование для сообщений и паролей</string>
     <string name="input_hint">Введите сообщение, пароль или кодовое слово</string>
     <string name="secret_key_hint">Введите общий секретный ключ</string>
