@@ -17,6 +17,7 @@ import java.util.Base64
 import javax.crypto.Cipher
 import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnEncrypt: MaterialButton
     private lateinit var btnDecrypt: MaterialButton
     private lateinit var btnCopy: MaterialButton
+
+    private lateinit var btnShare: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         btnEncrypt = findViewById(R.id.btnEncrypt)
         btnDecrypt = findViewById(R.id.btnDecrypt)
         btnCopy = findViewById(R.id.btnCopy)
+        btnShare = findViewById(R.id.btnShare)
 
         btnEncrypt.setOnClickListener {
             val text = etInput.text?.toString()?.trim().orEmpty()
@@ -54,6 +58,22 @@ class MainActivity : AppCompatActivity() {
                 tvResult.text = ""
                 showToast("Ошибка шифрования: ${e.message}")
             }
+        }
+
+        btnShare.setOnClickListener {
+            val result = tvResult.text.toString()
+
+            if (result.isBlank() || result == getString(R.string.result_output_hint)) {
+                showToast("Нет данных для отправки")
+                return@setOnClickListener
+            }
+
+            val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_TEXT, result)
+            }
+
+            startActivity(Intent.createChooser(shareIntent, "Поделиться через"))
         }
 
         btnDecrypt.setOnClickListener {
