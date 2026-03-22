@@ -4,11 +4,11 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets
 import java.security.MessageDigest
@@ -20,12 +20,12 @@ import javax.crypto.spec.SecretKeySpec
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var etInput: EditText
-    private lateinit var etSecretKey: EditText
+    private lateinit var etInput: TextInputEditText
+    private lateinit var etSecretKey: TextInputEditText
     private lateinit var tvResult: TextView
-    private lateinit var btnEncrypt: Button
-    private lateinit var btnDecrypt: Button
-    private lateinit var btnCopy: Button
+    private lateinit var btnEncrypt: MaterialButton
+    private lateinit var btnDecrypt: MaterialButton
+    private lateinit var btnCopy: MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
         btnCopy = findViewById(R.id.btnCopy)
 
         btnEncrypt.setOnClickListener {
-            val text = etInput.text.toString()
-            val password = etSecretKey.text.toString()
+            val text = etInput.text?.toString()?.trim().orEmpty()
+            val password = etSecretKey.text?.toString()?.trim().orEmpty()
 
             if (text.isBlank() || password.isBlank()) {
                 showToast("Заполните текст и секретный ключ")
@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnDecrypt.setOnClickListener {
-            val encryptedText = etInput.text.toString()
-            val password = etSecretKey.text.toString()
+            val encryptedText = etInput.text?.toString()?.trim().orEmpty()
+            val password = etSecretKey.text?.toString()?.trim().orEmpty()
 
             if (encryptedText.isBlank() || password.isBlank()) {
                 showToast("Введите зашифрованный текст и секретный ключ")
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
         btnCopy.setOnClickListener {
             val result = tvResult.text.toString()
-            if (result.isBlank() || result == "Здесь появится результат") {
+            if (result.isBlank() || result == getString(R.string.result_output_hint)) {
                 showToast("Нет данных для копирования")
                 return@setOnClickListener
             }
