@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Энкрипто</string>
     <string name="description">Симметричное шифрование для сообщений и паролей</string>
-    <string name="input_hint">Введите сообщение, пароль или кодовое слово</string>
+    <string name="input_hint">Введите сообщение</string>
     <string name="secret_key_hint">Введите общий секретный ключ</string>
     <string name="encrypt_button">Зашифровать</string>
     <string name="decrypt_button">Расшифровать</string>

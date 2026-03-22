@@ -42,7 +42,8 @@
                 android:layout_height="160dp"
                 android:inputType="textMultiLine"
                 android:gravity="top"
-                android:textColor="?attr/colorOnSurface"/>
+                android:textColor="@color/black"
+                android:alpha="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Ключ -->
@@ -59,7 +60,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:textColor="?attr/colorOnSurface"/>
+                android:textColor="?attr/colorOnSurface"
+                android:alpha="1"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Кнопки -->
@@ -79,7 +81,7 @@
                 android:textAllCaps="false"
 
                 android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMinTextSize="6sp"
                 android:autoSizeMaxTextSize="14sp"
                 android:autoSizeStepGranularity="1sp"
                 android:maxLines="2"
@@ -104,7 +106,7 @@
                 android:textAllCaps="false"
 
                 android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="10sp"
+                android:autoSizeMinTextSize="6sp"
                 android:autoSizeMaxTextSize="14sp"
                 android:autoSizeStepGranularity="1sp"
                 android:maxLines="2"
