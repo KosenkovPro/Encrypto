@@ -84,7 +84,7 @@
                 android:autoSizeMinTextSize="6sp"
                 android:autoSizeMaxTextSize="14sp"
                 android:autoSizeStepGranularity="1sp"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:ellipsize="none"
 
                 app:cornerRadius="16dp"
@@ -109,7 +109,7 @@
                 android:autoSizeMinTextSize="6sp"
                 android:autoSizeMaxTextSize="14sp"
                 android:autoSizeStepGranularity="1sp"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:ellipsize="none"
 
                 app:cornerRadius="16dp"
